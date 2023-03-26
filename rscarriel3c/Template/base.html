@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Donacion - Formulario</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- site icon -->
+      <link rel="icon" href="{% static 'img/log.png' %}" type="image/png" />
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'dcss/bootstrap.min.css' %}" />
+      <!-- site css -->
+      <link rel="stylesheet" href="{% static 'style.css' %}" />
+      <!-- responsive css -->
+      <link rel="stylesheet" href="{% static 'dcss/responsive.css' %}" />
+      <!-- color css -->
+      <link rel="stylesheet" href="{% static 'dcss/colors.css' %}" />
+      <!-- select bootstrap -->
+      <link rel="stylesheet" href="{% static 'dcss/bootstrap-select.css' %}" />
+      <!-- scrollbar css -->
+      <link rel="stylesheet" href="{% static 'dcss/perfect-scrollbar.css' %}" />
+      <!-- custom css -->
+      <link rel="stylesheet" href="{% static 'dcss/custom.css' %}" />
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+   </head>
+   <body class="dashboard dashboard_1">
+      <div class="full_container">
+         <div class="inner_container">
+            <!-- Sidebar  -->
+           
+            <!-- end sidebar -->
+            <!-- right content -->
+            <div id="content">
+               <!-- topbar -->
+               <div class="topbar">
+                  <nav class="navbar navbar-expand-lg navbar-light">
+                     <div class="full">
+                           <div class="icon_info">
+                              <ul class="user_profile_dd">
+                                 <li>
+                                    <a class="dropdown-toggle" data-toggle="dropdown"><img class="img-responsive rounded-circle" src="{% static 'img/log.png' %}"/><span class="name_user">Bienvenido {{ user.username }}</span></a>
+                                    <div class="dropdown-menu">
+                                       <a class="dropdown-item" href="{% url 'Inicio' %}"><i class="fa fa-dashboard yellow_color"></i> Formulario</a>
+                                       <a class="dropdown-item" href="/admin/">Administrador</a>
+                                       <a class="dropdown-item" href="/admin/logout/"><span>Salir</span> <i class="fa fa-sign-out"></i></a>
+                                    </div>
+                                 </li>
+                              </ul>
+                           </div>
+                        
+                     </div>
+                  </nav>
+               </div>
+{% block content %}
+{% endblock %}
+
+
+
+                                 <div class="container-fluid">
+                     <div class="footer">
+                        <p>Copyright © Nikols.</p>
+                     </div>
+                  </div>
+               </div>
+               <!-- end dashboard inner -->
+            </div>
+         </div>
+      </div>
+      <!-- jQuery -->
+      <script src="{% static 'djs/jquery.min.js' %}"></script>
+      <script src="{% static 'djs/popper.min.js' %}"></script>
+      <script src="{% static 'djs/bootstrap.min.js' %}"></script>
+      <!-- wow animation -->
+      <script src="{% static 'djs/animate.js' %}"></script>
+      <!-- select country -->
+      <script src="{% static 'djs/bootstrap-select.js' %}"></script>
+      <!-- owl carousel -->
+      <script src="{% static 'djs/owl.carousel.js' %}"></script> 
+      <!-- chart js -->
+      <script src="{% static 'djs/Chart.min.js' %}"></script>
+      <script src="{% static 'djs/Chart.bundle.min.js' %}"></script>
+      <script src="{% static 'djs/utils.js' %}"></script>
+      <script src="{% static 'djs/analyser.js' %}"></script>
+      <!-- nice scrollbar -->
+      <script src="{% static 'djs/perfect-scrollbar.min.js' %}"></script>
+      <script src= >
+         var ps = new PerfectScrollbar('#sidebar');
+      </script>
+      <!-- custom js -->
+      <script src="{% static 'djs/custom.js' %}"></script>
+      <script src="{% static 'djs/chart_custom_style1.js' %}"></script>
+   </body>
+</html>

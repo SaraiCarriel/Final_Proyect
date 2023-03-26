@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Donacion - Formulario</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{% static 'img/log.png' %}" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+            <link rel="stylesheet" href="{% static 'css/anmas.css' %}">
+    </head>
+    <body>
+        <!-- Responsive navbar-->
+        <nav class="navbar navbar-expand-lg navbar-white bg-white">
+            <div class="container">
+                <img src="{% static 'img/nikols.png' %}" width="10%" height="auto">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'Inicio' %}">Formulario</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Header - set the background image for the header in the line below-->
+
+        <!-- Content section-->
+  
+     <div class="login-box">
+      <img src="{% static 'img/log.png' %}" class="avatar" alt="Avatar Image">
+      <h1>Iniciar Sesion</h1>
+      <form method="POST">
+         {% csrf_token %}
+        <!-- USERNAME INPUT -->
+        <label for="username">USUARIO</label>
+        <input type="text" name="username" placeholder="Usuario" id="id_username">
+        <!-- PASSWORD INPUT -->
+        <label for="password">CONTRASEÑA</label>
+        <input type="password" name="password" placeholder="Contraseña"  id="id_password">
+        <br>
+        <a href="{% url 'signup' %}">Crear Usuario</a>
+        <button class="btn btn-primary" type="submit" style="text-align: center;">Ingresar</button>
+
+      </form>
+      {% if form.errors %}
+  <div class="alert alert-danger">
+    Usuario o Clave Mal Ingresados
+    <ul>
+      {% for field in form %}
+        {% for error in field.errors %}
+          <li>{{ error }}</li>
+        {% endfor %}
+      {% endfor %}
+    </ul>
+  </div>
+{% endif %}
+    </div>
+        <!-- Image element - set the background image for the header in the line below-->
+       
+        <!-- Footer-->
+
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="{% static 'js/scripts.js' %}"></script>
+    </body>
+</html>
